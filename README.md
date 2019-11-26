@@ -1,10 +1,6 @@
-=====================================
-=  README for ex5: File Processing  =
-=====================================
-
-=============================
-=      File description     =
-=============================
+=======================
+=   File description  =
+=======================
 
 DirectoryProcessor.java -       Contains the main method that runs the project.
 
