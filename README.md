@@ -1,5 +1,5 @@
 
-   File description  
+   Files description  
 ======================
 
 DirectoryProcessor.java -       Contains the main method that runs the project.
