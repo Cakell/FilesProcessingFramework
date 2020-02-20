@@ -25,18 +25,18 @@ Where:
 ## Files description  
 
 
-DirectoryProcessor.java -   Contains the main method that runs the project.
+    DirectoryProcessor.java -   Contains the main method that runs the project.
 
-SourceDirectory.java -      Contains the SourceDirectory class, which represents the directory of files
+    SourceDirectory.java -      Contains the SourceDirectory class, which represents the directory of files
                             being filtered & ordered - according to the commands of the 'CommandsFile'.
 
-CommandsFile.java -         Contains the CommandsFile class, which represents the text file in which
+    CommandsFile.java -         Contains the CommandsFile class, which represents the text file in which
                             there are one or more sections of filter & order commands.
 
-Section.java -              Contains the Section class, which represents a single section
+    Section.java -              Contains the Section class, which represents a single section
                             of a filter & order.
 
-Order.java -                Contains the Order class, which implements the different order types.
+    Order.java -                Contains the Order class, which implements the different order types.
 
 package 'filters':
     
