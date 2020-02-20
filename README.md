@@ -11,7 +11,7 @@ java filesprocessing.DirectoryProcessor sourcedir commandfile
 ```
 Where:
 
-* sourcedir is a directory name, in the form of a path (e.g., “./myhomeworks/homework1/” or “./myhomeworks/homework1”).
+* sourcedir is a directory name, in the form of a path (e.g., “./myhws/homework1/” or “./myhws/homework1”).
   This directory is referred to in the following as Source Directory.
   sourcedir can be either absolute or relative to where we run the program from.
 
@@ -25,64 +25,64 @@ Where:
 ## Files description  
 
 
-DirectoryProcessor.java -       Contains the main method that runs the project.
+DirectoryProcessor.java -   Contains the main method that runs the project.
 
-SourceDirectory.java -          Contains the SourceDirectory class, which represents the directory of files
-                                being filtered & ordered - according to the commands of the 'CommandsFile'.
+SourceDirectory.java -      Contains the SourceDirectory class, which represents the directory of files
+                            being filtered & ordered - according to the commands of the 'CommandsFile'.
 
-CommandsFile.java -             Contains the CommandsFile class, which represents the text file in which
-                                there are one or more sections of filter & order commands.
+CommandsFile.java -         Contains the CommandsFile class, which represents the text file in which
+                            there are one or more sections of filter & order commands.
 
-Section.java -                  Contains the Section class, which represents a single section
-                                of a filter & order.
+Section.java -              Contains the Section class, which represents a single section
+                            of a filter & order.
 
-Order.java -                    Contains the Order class, which implements the different order types.
+Order.java -                Contains the Order class, which implements the different order types.
 
 package 'filters':
     
-    Filter.java -               Contains the Filter class, which uses the different filter types to
-                                filter the files in the current section.
+    Filter.java -           Contains the Filter class, which uses the different filter types to
+                            filter the files in the current section.
 
-    GreaterThan.java -          Implements the 'GreaterThan' filter.
-    Between.java -              Implements the 'Between' filter.
-    SmallerThan.java -          Implements the 'SmallerThan' filter.
-    FileName.java -             Implements the 'File' filter.
-    Contains.java -             Implements the 'Contains' filter.
-    Prefix.java -               Implements the 'Prefix' filter.
-    Suffix.java -               Implements the 'Suffix' filter.
-    Writable.java -             Implements the 'Writable' filter.
-    Executable.java -           Implements the 'Executable' filter.
-    Hidden.java -               Implements the 'Hidden' filter.
-    All.java -                  Implements the 'All' filter.
+    GreaterThan.java -      Implements the 'GreaterThan' filter.
+    Between.java -          Implements the 'Between' filter.
+    SmallerThan.java -      Implements the 'SmallerThan' filter.
+    FileName.java -         Implements the 'File' filter.
+    Contains.java -         Implements the 'Contains' filter.
+    Prefix.java -           Implements the 'Prefix' filter.
+    Suffix.java -           Implements the 'Suffix' filter.
+    Writable.java -         Implements the 'Writable' filter.
+    Executable.java -       Implements the 'Executable' filter.
+    Hidden.java -           Implements the 'Hidden' filter.
+    All.java -              Implements the 'All' filter.
 
 package 'warnings':
     
-    Warning.java -              Implements the 'Type I Error - Warning', which is thrown when a line
-                                holding a filter / order description has an illegal value.
+    Warning.java -                      Implements the 'Type I Error - Warning', which is thrown when a line
+                                        holding a filter / order description has an illegal value.
 
-    BadNameWarning.java -       Thrown when the filter / order description has an illegal value.
-    BadFilterNameWarning.java - Thrown when the filter description has a filter type that dosen't exist
-    BadOrderNameWarning.java -  Thrown when the order description has an order type that dosen't exist
-    BadParametersWarning.java - Thrown when the filter description has an illegal value.
+    BadNameWarning.java -               Thrown when the filter / order description has an illegal value.
+    BadFilterNameWarning.java -         Thrown when the filter description has a filter type that dosen't exist
+    BadOrderNameWarning.java -          Thrown when the order description has an order type that dosen't exist
+    BadParametersWarning.java -         Thrown when the filter description has an illegal value.
     BadYesNoParametersWarning.java -    Thrown when one of the filters: Writable, Executable or Hidden
                                         has any other value than YES or NO.
-    NegativeSizeWarning.java -  Thrown when when one of the filters: GreaterThan, Between or SmallerThan
-                                has a value of a negative number.
+    NegativeSizeWarning.java -          Thrown when when one of the filters: GreaterThan, Between or SmallerThan
+                                        has a value of a negative number.
     IllegalBetweenValuesWarning.java -  Thrown when Between's values are reversed (the lower limit is
                                         strictly greater than the upper limit).
 
 package 'type_II_errors':
     
-    TypeIIError.java -          Thrown when there is any vital error during the run of DirectoryProcessor,
-                                such as an IO exception, Invalid Uasge of the progrm arguments, or a bad
-                                format of the CommandsFile.
+    TypeIIError.java -              Thrown when there is any vital error during the run of DirectoryProcessor,
+                                    such as an IO exception, Invalid Uasge of the progrm arguments, or a bad
+                                    format of the CommandsFile.
 
-    InvalidUsage.java -         Thrown when there is an invalid usage of the program arguments, which means
-                                it received any other number but two arguments.
+    InvalidUsage.java -             Thrown when there is an invalid usage of the program arguments, which means
+                                    it received any other number but two arguments.
     CommandsFileIOException.java -  Thrown when there is an IOException when trying to access the
                                     CommandsFile.
     CommandsFileBadFormat.java -    Thrown when CommandsFile has a bad format, such as a missing sub-section.
-    BadSubSectionName.java -    Thrown when CommandsFile has a bad sub-section name (i.e., not FILTER/ORDER).
+    BadSubSectionName.java -        Thrown when CommandsFile has a bad sub-section name (i.e., not FILTER/ORDER).
 
 ## Design   
 
