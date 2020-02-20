@@ -1,6 +1,7 @@
 # FilesProcessingFramework
 
 A flexible framework for working with files.
+
 The framework filters & orders its files according to the commands written in the files.
 
 
