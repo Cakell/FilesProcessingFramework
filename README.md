@@ -1,6 +1,11 @@
+# FilesProcessingFramework
 
-   Files description  
-======================
+A flexible framework for working with files.
+The framework filters & orders its files according to the commands written in the files.
+
+
+## Files description  
+
 
 DirectoryProcessor.java -       Contains the main method that runs the project.
 
@@ -58,8 +63,7 @@ package 'type_II_errors':
     CommandsFileBadFormat.java -    Thrown when CommandsFile has a bad format, such as a missing sub-section.
     BadSubSectionName.java -    Thrown when CommandsFile has a bad sub-section name (i.e., not FILTER/ORDER).
 
-   Design   
-============
+## Design   
 
 The design of the project is based mostly on composition, but it also uses various design
 patterns such as private classes, factories and a state machine.
