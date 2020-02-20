@@ -88,26 +88,33 @@ package 'type_II_errors':
 
 The design of the project is based mostly on composition, but it also uses various design
 patterns such as private classes, factories and a state machine.
-    First, we have the main class - 'DirectoryProcessor', which gets two arguments - abstract paths of a
+
+First, we have the main class - 'DirectoryProcessor', which gets two arguments - abstract paths of a
 Source Directory, on which we filter its files and order them, and a path of a Commands File, in which
 there are one or more sections of filter & order commands. Hence, DirectoryProcessor HAS A single
 instance of a SourceDirectory and a single instance of CommandsFile, which interact in order to
 perform the commands on the files in the SourceDirectory.
-    The CommandsFile is COMPOSED OF one or more 'Sections', which are created by the CommandsFile, so that
+
+The CommandsFile is COMPOSED OF one or more 'Sections', which are created by the CommandsFile, so that
 each Section is COMPOSED OF a single 'Filter' and a single 'Order'.
-    As opposed to my original plan, as reflected in my UML diagram, in which I planned to have a package
+
+As opposed to my original plan, as reflected in my UML diagram, in which I planned to have a package
 containing the various types of the Orders (as I have done with the different types of filters), so that
 each Order will have its own class - in fact I've chosen a slightly different design.
-    The different Order types were kept as constant 'Comparator<File>' fields of the 'Order' class.
+
+The different Order types were kept as constant 'Comparator<File>' fields of the 'Order' class.
 Thus, when the 'compare' method of 'Type' and 'Size' needs to compare two "equal" files (and therefore
 should be ordered by the 'Abs' comparator) - it can easily use the 'ABS_COMPARATOR', which is a constant
 field of the class.
 
+
 Also, as mentioned above, I used the factory design pattern, in order to parse the lines containing the
 description of the Filter / Order that should be used in the section.
-    Last but not least, I used a state machine when parsing the CommandsFile into 'Sections', in order to
+
+Last but not least, I used a state machine when parsing the CommandsFile into 'Sections', in order to
 determine when the words "FILTER" and "ORDER" should be considered as a new sub-section, and when they
 should be considered as a 'bad FILTER / ORDER name'.
+
 
 Note that the big 'problem' of translating a CommandsFile to Filter / Order commands and execute them
 on the given SourceDirectory, have been modularized into several classes - each taking care of
@@ -115,6 +122,7 @@ the functionality of only the sub-problems relating to him.
 For instance, in order to build the hierarchy between the different classes, it was very important that
 'CommandsFile' will divide its text into Sections, and then 'Section' will send the Filter / Order
 description-lines to be interpret by their own classes - 'Filter' & 'Order'.
-    Also, I created many different types of exceptions that extend Warning or TypeIIException, in order to
+
+Also, I created many different types of exceptions that extend Warning or TypeIIException, in order to
 maintain the extendability of the project, and its continuity - if suddenly a small change should be
 done in the project, it can be done by changing a small area in the code.
