@@ -2,7 +2,26 @@
 
 A flexible framework for working with files.
 
-The framework filters & orders its files according to the commands written in the files.
+Filters the files in a given directory according to various conditions, and orders the
+filenames that passed the filtering according to various properties.
+The program is invoked from the command line as follows:
+
+```
+java filesprocessing.DirectoryProcessor sourcedir commandfile
+```
+Where:
+
+* sourcedir is a directory name, in the form of a path (e.g., “./myhomeworks/homework1/”
+  or “./myhomeworks/homework1”). This directory is referred to in the following as
+  Source Directory. sourcedir can be either absolute or relative to where we run the
+  program from.
+
+* commandfile is a name of a file, also in the form of a relative or absolute path (e.g.,
+  ./scripts/Commands1.txt). This file is referred to in the following as Commands
+  File. It is a text file that contains sections, wherein each section contains a FILTER
+  and an ORDER subsections (see section 4). The FILTER sub-section includes filters
+  which are used to select a subset of the files in the Source Directory .The ORDER
+  sub-section indicates in which order the files’ names should be printed.
 
 
 ## Files description  
@@ -11,7 +30,7 @@ The framework filters & orders its files according to the commands written in th
 DirectoryProcessor.java -       Contains the main method that runs the project.
 
 SourceDirectory.java -          Contains the SourceDirectory class, which represents the directory of files
-                                on which we filter its files and order them.
+                                being filtered & ordered - according to the commands of the 'CommandsFile'.
 
 CommandsFile.java -             Contains the CommandsFile class, which represents the text file in which
                                 there are one or more sections of filter & order commands.
