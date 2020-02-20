@@ -11,17 +11,15 @@ java filesprocessing.DirectoryProcessor sourcedir commandfile
 ```
 Where:
 
-* sourcedir is a directory name, in the form of a path (e.g., “./myhomeworks/homework1/”
-  or “./myhomeworks/homework1”). This directory is referred to in the following as
-  Source Directory. sourcedir can be either absolute or relative to where we run the
-  program from.
+* sourcedir is a directory name, in the form of a path (e.g., “./myhomeworks/homework1/” or “./myhomeworks/homework1”).
+  This directory is referred to in the following as Source Directory.
+  sourcedir can be either absolute or relative to where we run the program from.
 
-* commandfile is a name of a file, also in the form of a relative or absolute path (e.g.,
-  ./scripts/Commands1.txt). This file is referred to in the following as Commands
-  File. It is a text file that contains sections, wherein each section contains a FILTER
-  and an ORDER subsections (see section 4). The FILTER sub-section includes filters
-  which are used to select a subset of the files in the Source Directory .The ORDER
-  sub-section indicates in which order the files’ names should be printed.
+* commandfile is a name of a file, also in the form of a relative or absolute path (e.g., ./scripts/Commands1.txt).
+  This file is referred to in the following as Commands File. It is a text file that contains sections,
+  wherein each section contains a FILTER and an ORDER subsections (see section 4).
+  The FILTER sub-section includes filters which are used to select a subset of the files in the Source Directory.
+  The ORDER sub-section indicates in which order the files’ names should be printed.
 
 
 ## Files description  
@@ -41,6 +39,7 @@ Section.java -                  Contains the Section class, which represents a s
 Order.java -                    Contains the Order class, which implements the different order types.
 
 package 'filters':
+    
     Filter.java -               Contains the Filter class, which uses the different filter types to
                                 filter the files in the current section.
 
@@ -57,6 +56,7 @@ package 'filters':
     All.java -                  Implements the 'All' filter.
 
 package 'warnings':
+    
     Warning.java -              Implements the 'Type I Error - Warning', which is thrown when a line
                                 holding a filter / order description has an illegal value.
 
@@ -72,6 +72,7 @@ package 'warnings':
                                         strictly greater than the upper limit).
 
 package 'type_II_errors':
+    
     TypeIIError.java -          Thrown when there is any vital error during the run of DirectoryProcessor,
                                 such as an IO exception, Invalid Uasge of the progrm arguments, or a bad
                                 format of the CommandsFile.
